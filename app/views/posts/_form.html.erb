@@ -1,15 +1,11 @@
-<%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 mx-auto mt-5"
+style="background-color: #f8f9fa; padding: 20px; border-radius: 5px;">
+
+<%= form_with(model: post) do |form| %>
+  <h1>New post</h1>
+  
+ 
 
   <div>
     <%= form.label :title, style: "display: block" %>
@@ -30,3 +26,4 @@
     <%= form.submit class:"btn btn-primary"  %>
   </div>
 <% end %>
+</div>

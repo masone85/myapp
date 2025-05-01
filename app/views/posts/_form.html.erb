@@ -4,12 +4,13 @@ style="background-color: #f8f9fa; padding: 20px; border-radius: 5px;">
 
 <%= form_with(model: post) do |form| %>
   <h1>New post</h1>
-  
- 
-
   <div>
+  <% invalid = part.errors.include?(title)%>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title, class: "form-control" %>
+    <% if invalid %>
+     <%= part.errors.full_messages_for(:title).join(" ,")
+     %>
   </div>
 
   <div>
